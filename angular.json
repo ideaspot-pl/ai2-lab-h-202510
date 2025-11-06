@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "lab-h": {
+    "lab-i": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "lab-h:build:production"
+              "buildTarget": "lab-i:build:production"
             },
             "development": {
-              "buildTarget": "lab-h:build:development"
+              "buildTarget": "lab-i:build:development"
             }
           },
           "defaultConfiguration": "development"

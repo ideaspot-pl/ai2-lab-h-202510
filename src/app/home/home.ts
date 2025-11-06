@@ -13,7 +13,9 @@ import {HousingLocationInfo} from '../housinglocation';
       </form>
     </section>
     <section class="results">
-      <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+      @for(housingLocation of housingLocationList; track $index) {
+        <app-housing-location [housingLocation]="housingLocation"></app-housing-location>
+      }
     </section>
   `,
   styleUrl: './home.css',
@@ -21,14 +23,36 @@ import {HousingLocationInfo} from '../housinglocation';
 export class Home {
   readonly baseUrl = 'https://angular.dev/assets/images/tutorials/common';
 
-  housingLocation: HousingLocationInfo = {
-    id: 9999,
-    name: 'Test Home',
-    city: 'Test city',
-    state: 'ST',
-    photo: `${this.baseUrl}/example-house.jpg`,
-    availableUnits: 99,
+housingLocationList: HousingLocationInfo[] = [
+  {
+    id: 0,
+    name: 'Acme Fresh Start Housing',
+    city: 'Chicago',
+    state: 'IL',
+    photo: `${this.baseUrl}/bernard-hermant-CLKGGwIBTaY-unsplash.jpg`,
+    availableUnits: 4,
     wifi: true,
+    laundry: true,
+  },
+  {
+    id: 1,
+    name: 'A113 Transitional Housing',
+    city: 'Santa Monica',
+    state: 'CA',
+    photo: `${this.baseUrl}/brandon-griggs-wR11KBaB86U-unsplash.jpg`,
+    availableUnits: 0,
+    wifi: false,
+    laundry: true,
+  },
+  {
+    id: 2,
+    name: 'Warm Beds Housing Support',
+    city: 'Juneau',
+    state: 'AK',
+    photo: `${this.baseUrl}/i-do-nothing-but-love-lAyXdl1-Wmc-unsplash.jpg`,
+    availableUnits: 1,
+    wifi: false,
     laundry: false,
-  };
+  },
+];
 }
